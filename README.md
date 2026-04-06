@@ -1,6 +1,6 @@
-# ai-dev-base-devcontainer
+# agent-dev-base-devcontainer
 
-Devcontainer template for AI agent development using the [ai-dev-base](https://github.com/DataViking-Tech/ai-dev-base) image.
+Devcontainer template for AI agent development using the [agent-dev-base](https://github.com/DataViking-Tech/agent-dev-base) image.
 
 ## Quick Start
 

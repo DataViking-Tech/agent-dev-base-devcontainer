@@ -1,6 +1,6 @@
 {
   "name": "AI Dev Base",
-  "image": "ghcr.io/dataviking-tech/ai-dev-base:edge",
+  "image": "ghcr.io/dataviking-tech/agent-dev-base:edge",
   "remoteUser": "vscode",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
