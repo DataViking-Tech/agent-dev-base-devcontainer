@@ -7,10 +7,11 @@
   },
   "mounts": [
     "source=agent-dev-base-claude,target=/home/devuser/.claude,type=volume",
+    "source=agent-dev-base-claude-config,target=/home/devuser/.claude-config,type=volume",
     "source=agent-dev-base-codex,target=/home/devuser/.codex,type=volume",
     "source=agent-dev-base-amp,target=/home/devuser/.config/amp,type=volume"
   ],
-  "postStartCommand": "sudo chown -R devuser:devuser /home/devuser/.claude /home/devuser/.codex /home/devuser/.config/amp 2>/dev/null || true",
+  "postStartCommand": "sudo chown -R devuser:devuser /home/devuser/.claude /home/devuser/.claude-config /home/devuser/.codex /home/devuser/.config/amp 2>/dev/null || true; [ -L /home/devuser/.claude.json ] || ln -sf /home/devuser/.claude-config/claude.json /home/devuser/.claude.json; touch /home/devuser/.claude-config/claude.json",
   "customizations": {
     "vscode": {
       "settings": {
