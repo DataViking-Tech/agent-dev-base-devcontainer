@@ -11,7 +11,8 @@
     "source=agent-dev-base-codex,target=/home/devuser/.codex,type=volume",
     "source=agent-dev-base-amp,target=/home/devuser/.config/amp,type=volume"
   ],
-  "postStartCommand": "sudo chown -R devuser:devuser /home/devuser/.claude /home/devuser/.claude-config /home/devuser/.codex /home/devuser/.config/amp 2>/dev/null || true; [ -s /home/devuser/.claude-config/claude.json ] || echo '{}' > /home/devuser/.claude-config/claude.json; [ -L /home/devuser/.claude.json ] || ln -sf /home/devuser/.claude-config/claude.json /home/devuser/.claude.json",
+  "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "postStartCommand": ".devcontainer/postStartCommand.sh",
   "customizations": {
     "vscode": {
       "settings": {
@@ -22,6 +23,5 @@
         "ms-azuretools.vscode-docker"
       ]
     }
-  },
-  "postCreateCommand": "gc version && bd version && echo 'Agent Dev Base ready.'"
+  }
 }
