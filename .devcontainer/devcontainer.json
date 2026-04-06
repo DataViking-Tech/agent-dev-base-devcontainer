@@ -1,12 +1,12 @@
 {
-  "name": "AI Dev Base",
-  "image": "ghcr.io/dataviking-tech/agent-dev-base:edge",
-  "remoteUser": "vscode",
+  "name": "Agent Dev Base",
+  "image": "ghcr.io/dataviking-tech/agent-dev-base:latest",
+  "remoteUser": "devuser",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
   "mounts": [
-    "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
+    "source=${localEnv:HOME}/.claude,target=/home/devuser/.claude,type=bind,consistency=cached"
   ],
   "customizations": {
     "vscode": {
@@ -19,5 +19,5 @@
       ]
     }
   },
-  "postCreateCommand": "gc version && bd version && echo 'AI Dev Base ready.'"
+  "postCreateCommand": "gc version && bd version && echo 'Agent Dev Base ready.'"
 }
