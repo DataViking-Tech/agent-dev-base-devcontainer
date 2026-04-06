@@ -1,0 +1,26 @@
+# =============================================================================
+# Gas City runtime state
+# =============================================================================
+# The .gc/ directory holds runtime state that regenerates on every city
+# start or `gc init`:
+#   - Per-agent session IDs, prompt tmp files, claude settings
+#   - Controller/refinery/witness locks and PID files
+#   - Unbounded event logs (events.jsonl)
+#   - Nudge queue state
+#   - Dolt runtime state (pid, lock, log, config)
+#   - Generated system packs (.gc/system/*) — unpacked from the gc binary
+#
+# None of this is portable across machines. The context that matters lives
+# outside .gc/: city.toml, packs/, formulas/, prompts/, .beads/metadata.json.
+.gc/
+
+# =============================================================================
+# Beads / Dolt
+# =============================================================================
+# Dolt storage lives here when using local mode (non-server). The server-mode
+# data directory is typically elsewhere and managed by the dolt pack.
+.dolt/
+*.db
+
+# Beads local credentials (never commit secrets).
+.beads-credential-key
