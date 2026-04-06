@@ -38,7 +38,3 @@ Or build a downstream Dockerfile:
   }
 }
 ```
-
-## License
-
-MIT
