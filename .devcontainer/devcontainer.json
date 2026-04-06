@@ -5,6 +5,12 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
+  "mounts": [
+    "source=agent-dev-base-claude,target=/home/devuser/.claude,type=volume",
+    "source=agent-dev-base-codex,target=/home/devuser/.codex,type=volume",
+    "source=agent-dev-base-amp,target=/home/devuser/.config/amp,type=volume"
+  ],
+  "postStartCommand": "sudo chown -R devuser:devuser /home/devuser/.claude /home/devuser/.codex /home/devuser/.config/amp 2>/dev/null || true",
   "customizations": {
     "vscode": {
       "settings": {
