@@ -1,0 +1,23 @@
+{
+  "name": "AI Dev Base",
+  "image": "ghcr.io/dataviking-tech/ai-dev-base:edge",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "github.copilot",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "postCreateCommand": "gc version && bd version && echo 'AI Dev Base ready.'"
+}
